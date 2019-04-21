@@ -1,28 +1,9 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO #import library with simpler name
 
-tran_pin = 18
+tran_pin = 18 #use easier name for pin used
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) #use BCM pinout
 GPIO.setwarnings(False) #disable annoying warnings
-GPIO.setup(tran_pin, GPIO.OUT)
+GPIO.setup(tran_pin, GPIO.OUT) #set pin to output
 
-print ("Turning fan on...")
-GPIO.output(tran_pin, GPIO.HIGH)
-#print ("Done Press ctrl+C to stop fan")
-#while True:
-    #try:
-        #uselessvar = "useless"
-    #except KeyboardInterrupt:
-        #print ("Turning off fan...")
-        #GPIO.output(tran_pin, GPIO.LOW)
-        #print ("Cleaning up Gpio...")
-        #GPIO.cleanup()
-        #print ("Done")
-        #break
-    #except SystemExit:
-        #print ("SystemExit was called. Turning off fan")
-        #GPIO.output(tran_pin, GPIO.LOW)
-        #print ("Cleaning up Gpio...")
-        #GPIO.cleanup()
-        #print ("Done")
-        #break
+GPIO.output(tran_pin, GPIO.HIGH) #set pin to high
